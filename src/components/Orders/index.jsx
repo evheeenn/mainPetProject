@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateStatusWhenLogoutThunk } from "../../store/actions";
 import { Box } from "@mui/material";
 import Table from "./components/Table";
-import AccountData from "./Account Data";
+import AccountData from "./components/Account Data";
 
 export default function Orders() {
   const [count, setCount] = useState(0);
@@ -29,10 +29,19 @@ export default function Orders() {
     await setUserLogin(false);
   };
 
+  const styles = {
+    main: {
+      display: "flex",
+      "@media (max-width: 1020px)": {
+        flexDirection: "column",
+      },
+    },
+  };
+
   return (
     <>
       <Header count={count} action={logOut} isLogin={userLogIn} />
-      <Box sx={{ display: "flex" }} className={"container"}>
+      <Box sx={styles.main} className={"container"}>
         <Table />
         <AccountData />
       </Box>

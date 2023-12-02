@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
-import Button from "../../Login/components/Button";
+import Button from "../../../Login/components/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { deleteAccountThunk } from "../../../store/actions";
+import { deleteAccountThunk } from "../../../../store/actions";
 
 export default function AccountData() {
   const user = useSelector((store) => store.user);
@@ -14,6 +14,10 @@ export default function AccountData() {
       width: "27%",
       marginTop: "73px",
       marginLeft: "27px",
+      "@media (max-width: 1020px)": {
+        width: "100%",
+        marginLeft: "0px",
+      },
     },
 
     h1: {

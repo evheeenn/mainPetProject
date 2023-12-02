@@ -11,6 +11,39 @@ import {
   updateStatusWhenLogoutThunk,
 } from "../../store/actions";
 import DarkVariantExample from "./components/Carousel";
+import { createUseStyles } from "react-jss";
+
+const useStyles = createUseStyles({
+  main: {
+    marginTop: "17px",
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: "#EEE3F6",
+    justifyContent: "center",
+    minHeight: "100vh",
+  },
+
+  categoryContainer: {
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
+    minHeight: "450px",
+    margin: "25px 0 0 0",
+    paddingLeft: 0,
+    paddingBottom: "30px",
+    "@media (max-width: 450px)": {
+      paddingLeft: "20px",
+    },
+    "@media (max-width: 420px)": {
+      paddingLeft: "0px",
+    },
+  },
+
+  productsWrapper: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+});
 
 export default function Homepage() {
   const [userLogIn, setUserLogin] = useState(false);
@@ -20,6 +53,8 @@ export default function Homepage() {
 
   const user = useSelector((state) => state.user);
   const products = useSelector((state) => state.products);
+
+  const classes = useStyles();
 
   useEffect(() => {
     dispatch(getProducts());
@@ -57,28 +92,10 @@ export default function Homepage() {
         isLogin={userLogIn}
         setUserLogin={setUserLogin}
       />
-      <Box
-        sx={{
-          marginTop: "17px",
-          display: "flex",
-          flexDirection: "column",
-          backgroundColor: "#EEE3F6",
-          justifyContent: "center",
-          minHeight: "100vh",
-        }}
-      >
+      <Box className={classes.main}>
         <DarkVariantExample />
         {Object.keys(products).map((category) => (
-          <Container
-            key={category}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              width: "100%",
-              height: "450px",
-              margin: "25px 0 0 0",
-            }}
-          >
+          <Container key={category} className={classes.categoryContainer}>
             <Typography
               variant="h2"
               className="bootstrap-font-class"
@@ -90,14 +107,7 @@ export default function Homepage() {
             >
               {category}
             </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                "@media (max-width: 500px)": {
-                  flexDirection: "column",
-                },
-              }}
-            >
+            <Box className={classes.productsWrapper}>
               {products[category].map((el) => (
                 <Product
                   key={el.id}

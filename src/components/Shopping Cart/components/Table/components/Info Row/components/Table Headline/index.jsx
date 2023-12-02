@@ -1,18 +1,27 @@
 import React from "react";
 import { Box } from "@mui/material";
+import { createUseStyles } from "react-jss";
+
+const useStyles = createUseStyles({
+  headline: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 0,
+    background: "#dbdbdb",
+    fontWeight: 500,
+    "@media (max-width: 850px)": {
+      fontSize: "12px",
+    },
+  },
+});
 
 export default function TableHeadline({ text, width }) {
-  const styles = {
-    headline: {
-      width: width,
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      padding: 0,
-      background: "#dbdbdb",
-      fontWeight: 500,
-    },
-  };
+  const classes = useStyles();
 
-  return <Box sx={styles.headline}>{text}</Box>;
+  return (
+    <Box width={width} className={classes.headline}>
+      {text}
+    </Box>
+  );
 }

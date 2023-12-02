@@ -1,126 +1,181 @@
-import React, { useEffect } from "react";
+import React from "react";
 import logo from "./img/logo.png";
-import cart from "./img/shopping-cart.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { createUseStyles } from "react-jss";
+import PersonOffIcon from '@mui/icons-material/PersonOff';
+
+const useStyles = createUseStyles({
+  main: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: 83,
+    backgroundColor: "white",
+    "@media (max-width: 850px)": {
+      height: 70,
+    },
+  },
+
+  logo: {
+    width: "250px",
+    height: "73px",
+    cursor: "pointer",
+    backgroundImage: `url('${logo}')`,
+    backgroundSize: "100%",
+    backgroundPosition: "center",
+    "@media (max-width: 850px)": {
+      width: "200px",
+    },
+  },
+
+  menuWrapper: {
+    display: "flex",
+    height: "50%",
+    marginTop: "20px",
+    marginRight: "11%",
+  },
+
+  accountButtonWrapper: {
+    color: "#AE69DD",
+    paddingRight: "15px",
+    borderRight: "2px solid #AE69DD",
+    "@media (max-width: 850px)": {
+      paddingRight: "none",
+      borderRight: "none",
+    },
+  },
+
+  accountLink: {
+    color: "#AE69DD",
+    textDecoration: "none",
+    paddingBottom: "5px",
+    borderBottom: "1px dashed #AE69DD",
+  },
+
+  logInLink: {
+    color: "#AE69DD",
+    textDecoration: "none",
+    paddingBottom: "1px",
+    borderBottom: "1px dashed #AE69DD",
+  },
+
+  accountButtonOrLogIn: {
+    marginTop: "7px",
+    "@media (max-width: 850px)": {
+      display: "none",
+    },
+  },
+
+  mobileAccountIcon: {
+    display: "none",
+    "@media (max-width: 850px)": {
+      display: "block",
+      fontSize: "30px",
+      color: "#AE69DD",
+    },
+  },
+
+  shoppingCartButtonWrapper: {
+    width: "17px",
+    height: "17px",
+    marginTop: "5px",
+    marginLeft: "11px",
+    "@media (max-width: 850px)": {
+      marginTop: "1px",
+      marginLeft: "0px",
+    },
+  },
+
+  shoppingCartButton: {
+    color: "#AE69DD",
+    fontSize: 25,
+  },
+
+  productCounter: {
+    display: "flex",
+    justifyContent: "center",
+    width: "21px",
+    height: "21px",
+    zIndex: 2,
+    marginTop: "-199%",
+    marginLeft: "110%",
+    borderRadius: "50%",
+    backgroundColor: "#AE69DD",
+  },
+
+  productCounterText: {
+    marginTop: "auto",
+    marginBottom: "auto",
+    color: "white",
+    fontSize: "12px",
+  },
+
+  logOutButton: {
+    marginTop: "7px",
+    color: "#AE69DD",
+    cursor: "pointer",
+    textDecoration: "none",
+    marginLeft: "37px",
+    borderBottom: "1px dashed #AE69DD",
+    "@media (max-width: 850px)": {
+      display: "none",
+    },
+  },
+});
 
 export default function Header({ count, action }) {
   const user = useSelector((state) => state.user);
 
+  const classes = useStyles();
+
+  const navigate = useNavigate();
+
+  const logoAction = () => {
+    navigate("/");
+  };
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        height: 83,
-        backgroundColor: "white",
-      }}
-    >
-      <Box
-        sx={{
-          width: "59px",
-          heigth: "100%",
-          marginTop: "3px",
-          marginLeft: "7.5%",
-        }}
-      >
-        <Box 
-          sx={{
-            width: '250px',
-            height: '73px',
-            marginLeft: '-90px',
-            backgroundImage: `url('${logo}')`,
-            backgroundSize: '100%',
-            backgroundPosition: 'center'
-          }}></Box>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          height: "50%",
-          marginTop: "20px",
-          marginRight: "11%",
-        }}
-      >
-        <Box
-          sx={{
-            color: "#AE69DD",
-            paddingRight: "15px",
-            borderRight: "2px solid #AE69DD",
-          }}
-        >
-          <Typography
-            variant="body1"
-            sx={{
-              marginTop: "7px",
-            }}
-          >
+    <Box className={classes.main}>
+      <Box className={classes.logo} onClick={logoAction} />
+      <Box className={classes.menuWrapper}>
+        <Box className={classes.accountButtonWrapper}>
+          <Link to={user ? "/account" : '/login'}>
+            {user ? <AccountCircleIcon
+              width="25"
+              className={classes.mobileAccountIcon}
+            /> : <PersonOffIcon
+              width="25"
+              className={classes.mobileAccountIcon}
+            />}
+          </Link>
+          <Typography variant="body1" className={classes.accountButtonOrLogIn}>
             Hi,{" "}
             {user ? (
-              <Link
-                to="/account"
-                style={{
-                  color: "#AE69DD",
-                  textDecoration: "none",
-                  paddingBottom: "5px",
-                  borderBottom: "1px dashed #AE69DD",
-                }}
-              >
+              <Link to="/account" className={classes.accountLink}>
                 {user.name}
               </Link>
             ) : (
-              <Link
-                to="/login"
-                style={{
-                  color: "#AE69DD",
-                  textDecoration: "none",
-                  paddingBottom: "1px",
-                  borderBottom: "1px dashed #AE69DD",
-                }}
-              >
+              <Link to="/login" className={classes.logInLink}>
                 Log in
               </Link>
             )}
           </Typography>
         </Box>
-        <Box
-          sx={{
-            width: "17px",
-            height: "17px",
-            marginTop: "5px",
-            marginLeft: "11px",
-          }}
-        >
+        <Box className={classes.shoppingCartButtonWrapper}>
           <Box>
             <Link to={user ? "/shoppingCart" : "/login"}>
-              <ShoppingCartIcon width="25" sx={{color : "#AE69DD"}}/>
+              <ShoppingCartIcon
+                width="25"
+                className={classes.shoppingCartButton}
+              />
             </Link>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              width: "21px",
-              height: "21px",
-              zIndex: 2,
-              marginTop: "-199%",
-              marginLeft: "110%",
-              borderRadius: "50%",
-              backgroundColor: "#AE69DD",
-            }}
-          >
-            <Typography
-              variant="body1"
-              sx={{
-                marginTop: "auto",
-                marginBottom: "auto",
-                color: "white",
-                fontSize: "12px",
-              }}
-            >
+          <Box className={classes.productCounter}>
+            <Typography variant="body1" className={classes.productCounterText}>
               {user ? count : 0}
             </Typography>
           </Box>
@@ -129,14 +184,7 @@ export default function Header({ count, action }) {
           <Box>
             <Typography
               variant="body1"
-              sx={{
-                marginTop: "7px",
-                color: "#AE69DD",
-                cursor: "pointer",
-                textDecoration: "none",
-                marginLeft: "37px",
-                borderBottom: "1px dashed #AE69DD",
-              }}
+              className={classes.logOutButton}
               onClick={() => action(user)}
             >
               Log out
