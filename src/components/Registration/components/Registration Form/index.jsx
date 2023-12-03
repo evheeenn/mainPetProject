@@ -7,12 +7,23 @@ import {
   getUsersForValidationThunk,
   registrationThunk,
 } from "../../../../store/actions";
-import { useNavigate } from "react-router-dom";
-import CustomizedButton from "../Button";
+import { Link, useNavigate } from "react-router-dom";
+import CustomizedButton from "../../../Login/components/Button";
+import { createUseStyles } from "react-jss";
+
+const useStyles = createUseStyles({
+    link: {
+      color: "#AE69DD",
+      cursor: "pointer",
+      textDecoration: "none"
+    }
+  })
 
 export default function RegistrationForm({ h1, h4 }) {
   const userCheck = useSelector((state) => state.usersForValidation);
   const dispatch = useDispatch();
+
+  const classes = useStyles()
 
   class User {
     constructor(name, email, password) {
@@ -144,6 +155,11 @@ export default function RegistrationForm({ h1, h4 }) {
               width: "95%",
             }}
           />
+          <Box>
+          <Link to={'/login'} variant="body1" className={classes.link}>
+                I already have an account
+          </Link>
+          </Box>
           <CustomizedButton
             type={"submit"}
             text={"Create account"}

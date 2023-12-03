@@ -32,6 +32,7 @@ export default function ShoppingCart() {
   const styles = {
     cartWrapper: {
       display: "flex",
+      paddingBottom: "50px",
       "@media (max-width: 1020px)": {
         flexDirection: "column",
       },

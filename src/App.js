@@ -7,6 +7,7 @@ import { getUserThunk } from "./store/actions";
 import ShoppingCart from "./components/Shopping Cart";
 import Orders from "./components/Orders";
 import './App.css'
+import Registration from "./components/Registration";
 
 function App() {
   let user = JSON.parse(localStorage.getItem("user"));
@@ -22,6 +23,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/registration" element={<Registration/>}/>
       <Route path="/shoppingCart" element={<ShoppingCart />} />
       <Route path="/account" element={<Orders />} />
     </Routes>

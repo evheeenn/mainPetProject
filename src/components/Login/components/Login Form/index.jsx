@@ -2,10 +2,19 @@ import React from "react";
 import { Formik } from "formik";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getUserThunk } from "../../../../store/actions";
 import { Box, Typography, TextField, Alert } from "@mui/material";
 import CustomizedButton from "../Button";
+import { createUseStyles } from "react-jss";
+
+const useStyles = createUseStyles({
+  link: {
+    color: "#AE69DD",
+    cursor: "pointer",
+    textDecoration: "none"
+  }
+})
 
 export default function LoginForm({ h1, h4 }) {
   const usersData = useSelector((state) => state.usersForValidation);
@@ -15,6 +24,8 @@ export default function LoginForm({ h1, h4 }) {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+
+  const classes = useStyles()
 
   const submitValidation = (values) => {
     let userExist = false;
@@ -112,6 +123,11 @@ export default function LoginForm({ h1, h4 }) {
                 width: "95%",
               }}
             />
+              <Box>
+              <Link to={'/registration'} variant="body1" className={classes.link}>
+                I am a new customer
+              </Link>
+              </Box>
             {errors.password && touched.password && errors.password}
             <CustomizedButton
               text={"Sign In"}

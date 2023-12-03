@@ -5,10 +5,33 @@ import { Box } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { getUsersForValidationThunk } from "../../store/actions";
 import LoginForm from "./components/Login Form";
-import RegistrationForm from "./components/Registration Form";
+import { createUseStyles } from "react-jss";
+
+const useStyles = createUseStyles({
+  main: {
+    marginTop: "57px",
+    height: "57.5vh",
+    display: "flex",
+  },
+
+  formWrapper: {
+    width: "40%",
+    height: "100%",
+    paddingLeft: "37px",
+    margin: "57px auto 0 auto",
+    "@media (max-width: 1020px)": {
+      width: "50%",
+    },
+    "@media (max-width: 700px)": {
+      width: "100%",
+    },
+  },
+});
 
 export default function Login() {
   const dispatch = useDispatch();
+
+  const classes = useStyles();
 
   useEffect(() => {
     dispatch(getUsersForValidationThunk());
@@ -17,34 +40,9 @@ export default function Login() {
   return (
     <Box>
       <Header />
-      <Box
-        sx={{
-          marginTop: "57px",
-          height: "57.5vh",
-          display: "flex",
-        }}
-      >
-        <Box
-          sx={{
-            width: "50%",
-            height: "100%",
-            paddingLeft: "37px",
-            borderRight: "3px solid #bbbbbb",
-          }}
-        >
+      <Box className={classes.main}>
+        <Box className={classes.formWrapper}>
           <LoginForm h1={"Secure Sign In"} h4={"For current customers"} />
-        </Box>
-        <Box
-          sx={{
-            width: "50%",
-            height: "100%",
-            paddingLeft: "37px",
-          }}
-        >
-          <RegistrationForm
-            h1={"Quick Registration"}
-            h4={"For new customers"}
-          />
         </Box>
       </Box>
     </Box>

@@ -34,6 +34,7 @@ export default function Orders() {
       display: "flex",
       "@media (max-width: 1020px)": {
         flexDirection: "column",
+        paddingBottom: "50px",
       },
     },
   };
@@ -43,7 +44,7 @@ export default function Orders() {
       <Header count={count} action={logOut} isLogin={userLogIn} />
       <Box sx={styles.main} className={"container"}>
         <Table />
-        <AccountData />
+        <AccountData action={logOut} />
       </Box>
     </>
   );
