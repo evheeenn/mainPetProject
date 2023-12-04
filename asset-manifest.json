@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/shop/static/css/main.a240c550.css",
+    "main.js": "/shop/static/js/main.bdb9518d.js",
+    "static/js/787.3a2bf26f.chunk.js": "/shop/static/js/787.3a2bf26f.chunk.js",
+    "static/media/banner2.png": "/shop/static/media/banner2.a0e347a3f232b823733e.png",
+    "static/media/banner3.png": "/shop/static/media/banner3.bf3bd0978486f8d74f75.png",
+    "static/media/banner1.png": "/shop/static/media/banner1.75a3bed02a20158bebd8.png",
+    "static/media/awu.png": "/shop/static/media/awu.0568360ceface36c37cd.png",
+    "static/media/mba15.png": "/shop/static/media/mba15.48292e8e8bbd8b3b9f9a.png",
+    "static/media/awser8.png": "/shop/static/media/awser8.209fa1e641531fbf1faf.png",
+    "static/media/awse.png": "/shop/static/media/awse.8005b9c8749ab29c8f6d.png",
+    "static/media/iphone15pro.png": "/shop/static/media/iphone15pro.69085d3cba8cca53a450.png",
+    "static/media/awser9.png": "/shop/static/media/awser9.3f212e02db495ff6822b.png",
+    "static/media/iphone14pro.png": "/shop/static/media/iphone14pro.f77cf683541df3e1b832.png",
+    "static/media/mb16pro.png": "/shop/static/media/mb16pro.74f4357f4441d6bb0524.png",
+    "static/media/iphone14.png": "/shop/static/media/iphone14.406f7e56fe6e1e4f9e1d.png",
+    "static/media/logo.png": "/shop/static/media/logo.53a139c86c7ee224ffc7.png",
+    "index.html": "/shop/index.html",
+    "main.a240c550.css.map": "/shop/static/css/main.a240c550.css.map",
+    "main.bdb9518d.js.map": "/shop/static/js/main.bdb9518d.js.map",
+    "787.3a2bf26f.chunk.js.map": "/shop/static/js/787.3a2bf26f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a240c550.css",
+    "static/js/main.bdb9518d.js"
+  ]
+}
