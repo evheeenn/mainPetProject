@@ -11,7 +11,7 @@ const useStyles = createUseStyles({
     height: "100%",
     marginTop: "57px",
     "@media (max-width: 1020px)": {
-      width: "100%"
+      width: "100%",
     },
   },
 
@@ -27,12 +27,12 @@ const useStyles = createUseStyles({
     color: "#AE69DD",
     fontWeight: "700",
   },
-})
+});
 
 export default function Table() {
   const user = useSelector((store) => store.user);
 
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <>

@@ -73,7 +73,7 @@ export default function AccountData({ action }) {
         </Typography>
       </Box>
       <Box className={classes.buttonWrapper}>
-      <Button
+        <Button
           text={"Log Out"}
           style={{
             width: "55%",
@@ -101,7 +101,7 @@ export default function AccountData({ action }) {
             color: "#9d4946",
             background: "#e6ccd0",
             border: "none",
-            margin: "15px auto 0 auto"
+            margin: "15px auto 0 auto",
           }}
           action={() => action(user)}
         />

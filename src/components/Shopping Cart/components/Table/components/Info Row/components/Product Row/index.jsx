@@ -157,7 +157,8 @@ export default function ProductRow({ data }) {
               ? data.count *
                   (data.price - (data.price * data.salePercent) / 100)
               : data.price * data.count
-          )}₴
+          )}
+          ₴
         </Typography>
       </Box>
       <Box width={"15%"} justifyContent={"center"} className={styles.productTD}>

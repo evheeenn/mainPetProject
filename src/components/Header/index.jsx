@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { createUseStyles } from "react-jss";
-import PersonOffIcon from '@mui/icons-material/PersonOff';
+import PersonOffIcon from "@mui/icons-material/PersonOff";
 
 const useStyles = createUseStyles({
   main: {
@@ -143,14 +143,15 @@ export default function Header({ count, action }) {
       <Box className={classes.logo} onClick={logoAction} />
       <Box className={classes.menuWrapper}>
         <Box className={classes.accountButtonWrapper}>
-          <Link to={user ? "/account" : '/login'}>
-            {user ? <AccountCircleIcon
-              width="25"
-              className={classes.mobileAccountIcon}
-            /> : <PersonOffIcon
-              width="25"
-              className={classes.mobileAccountIcon}
-            />}
+          <Link to={user ? "/account" : "/login"}>
+            {user ? (
+              <AccountCircleIcon
+                width="25"
+                className={classes.mobileAccountIcon}
+              />
+            ) : (
+              <PersonOffIcon width="25" className={classes.mobileAccountIcon} />
+            )}
           </Link>
           <Typography variant="body1" className={classes.accountButtonOrLogIn}>
             Hi,{" "}

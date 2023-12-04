@@ -104,7 +104,6 @@ export default function Product({ data, addToCart, userLogIn }) {
       <Box
         sx={{
           display: "flex",
-          // marginTop: data.sale ? '48px' : null
         }}
       >
         {data.sale ? (

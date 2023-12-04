@@ -12,9 +12,9 @@ const useStyles = createUseStyles({
   link: {
     color: "#AE69DD",
     cursor: "pointer",
-    textDecoration: "none"
-  }
-})
+    textDecoration: "none",
+  },
+});
 
 export default function LoginForm({ h1, h4 }) {
   const usersData = useSelector((state) => state.usersForValidation);
@@ -25,7 +25,7 @@ export default function LoginForm({ h1, h4 }) {
 
   const navigate = useNavigate();
 
-  const classes = useStyles()
+  const classes = useStyles();
 
   const submitValidation = (values) => {
     let userExist = false;
@@ -123,11 +123,15 @@ export default function LoginForm({ h1, h4 }) {
                 width: "95%",
               }}
             />
-              <Box>
-              <Link to={'/registration'} variant="body1" className={classes.link}>
+            <Box>
+              <Link
+                to={"/registration"}
+                variant="body1"
+                className={classes.link}
+              >
                 I am a new customer
               </Link>
-              </Box>
+            </Box>
             {errors.password && touched.password && errors.password}
             <CustomizedButton
               text={"Sign In"}
