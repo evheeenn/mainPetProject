@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/evheeenn.github.io/static/css/main.a240c550.css",
-    "main.js": "/evheeenn.github.io/static/js/main.10be8cfe.js",
-    "static/js/787.3a2bf26f.chunk.js": "/evheeenn.github.io/static/js/787.3a2bf26f.chunk.js",
-    "static/media/banner2.png": "/evheeenn.github.io/static/media/banner2.a0e347a3f232b823733e.png",
-    "static/media/banner3.png": "/evheeenn.github.io/static/media/banner3.bf3bd0978486f8d74f75.png",
-    "static/media/banner1.png": "/evheeenn.github.io/static/media/banner1.75a3bed02a20158bebd8.png",
-    "static/media/awu.png": "/evheeenn.github.io/static/media/awu.0568360ceface36c37cd.png",
-    "static/media/mba15.png": "/evheeenn.github.io/static/media/mba15.48292e8e8bbd8b3b9f9a.png",
-    "static/media/awser8.png": "/evheeenn.github.io/static/media/awser8.209fa1e641531fbf1faf.png",
-    "static/media/awse.png": "/evheeenn.github.io/static/media/awse.8005b9c8749ab29c8f6d.png",
-    "static/media/iphone15pro.png": "/evheeenn.github.io/static/media/iphone15pro.69085d3cba8cca53a450.png",
-    "static/media/awser9.png": "/evheeenn.github.io/static/media/awser9.3f212e02db495ff6822b.png",
-    "static/media/iphone14pro.png": "/evheeenn.github.io/static/media/iphone14pro.f77cf683541df3e1b832.png",
-    "static/media/mb16pro.png": "/evheeenn.github.io/static/media/mb16pro.74f4357f4441d6bb0524.png",
-    "static/media/iphone14.png": "/evheeenn.github.io/static/media/iphone14.406f7e56fe6e1e4f9e1d.png",
-    "static/media/logo.png": "/evheeenn.github.io/static/media/logo.53a139c86c7ee224ffc7.png",
-    "index.html": "/evheeenn.github.io/index.html",
-    "main.a240c550.css.map": "/evheeenn.github.io/static/css/main.a240c550.css.map",
-    "main.10be8cfe.js.map": "/evheeenn.github.io/static/js/main.10be8cfe.js.map",
-    "787.3a2bf26f.chunk.js.map": "/evheeenn.github.io/static/js/787.3a2bf26f.chunk.js.map"
+    "main.css": "/static/css/main.a240c550.css",
+    "main.js": "/static/js/main.f78b5a11.js",
+    "static/js/787.3a2bf26f.chunk.js": "/static/js/787.3a2bf26f.chunk.js",
+    "static/media/banner2.png": "/static/media/banner2.a0e347a3f232b823733e.png",
+    "static/media/banner3.png": "/static/media/banner3.bf3bd0978486f8d74f75.png",
+    "static/media/banner1.png": "/static/media/banner1.75a3bed02a20158bebd8.png",
+    "static/media/awu.png": "/static/media/awu.0568360ceface36c37cd.png",
+    "static/media/mba15.png": "/static/media/mba15.48292e8e8bbd8b3b9f9a.png",
+    "static/media/awser8.png": "/static/media/awser8.209fa1e641531fbf1faf.png",
+    "static/media/awse.png": "/static/media/awse.8005b9c8749ab29c8f6d.png",
+    "static/media/iphone15pro.png": "/static/media/iphone15pro.69085d3cba8cca53a450.png",
+    "static/media/awser9.png": "/static/media/awser9.3f212e02db495ff6822b.png",
+    "static/media/iphone14pro.png": "/static/media/iphone14pro.f77cf683541df3e1b832.png",
+    "static/media/mb16pro.png": "/static/media/mb16pro.74f4357f4441d6bb0524.png",
+    "static/media/iphone14.png": "/static/media/iphone14.406f7e56fe6e1e4f9e1d.png",
+    "static/media/logo.png": "/static/media/logo.53a139c86c7ee224ffc7.png",
+    "index.html": "/index.html",
+    "main.a240c550.css.map": "/static/css/main.a240c550.css.map",
+    "main.f78b5a11.js.map": "/static/js/main.f78b5a11.js.map",
+    "787.3a2bf26f.chunk.js.map": "/static/js/787.3a2bf26f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a240c550.css",
-    "static/js/main.10be8cfe.js"
+    "static/js/main.f78b5a11.js"
   ]
 }
